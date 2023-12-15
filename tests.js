@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 describe("Conceptos básicos: variables", () => {
     it("Usaremos let para definir variables", () => {
         let name = "Frodo";
@@ -39,13 +41,15 @@ describe("Números en Javascript", () => {
     it("Puedes utilizar ++ para autoincrementar un número en 1 unidad", () => {
         let n = 6;
         // incrementa n usando el operador ++
-        const result = 100 + n;
+        const result = 100 + ++n;
         expect(result).to.equal(107)
     });
+
     it("Puedes utilizar -- para decrementar un número en 1 unidad", () => {
         let n = 8;
         // decrementa n usando el operador --
-        const result = 100 + n;
+        const result = 100 + --n;
+        n--;
         expect(result).to.equal(107)
     });
 });
@@ -87,14 +91,14 @@ describe('Comparaciones en Javascript', () => {
     it("usando ===", () => {
         const number = 20;
         //completa la asignación usando number y el comparador ===
-        
+        const expresion = number === 30
         expect(expresion).to.equal(false)
     })
 
     it("usando !==", () => {
         const language = "Javascript";
         //completa la asignación usando language y el comparador !==
-
+        const expresion = language !== "Javascript";
         expect(expresion).to.equal(false)
     })
 });
@@ -103,16 +107,15 @@ describe("condicionales en javascript", () => {
     it("completa el valor del resultado esperado (expected)", () => {
 
         let name = "Pepe";
-        
         let result = "KO";
-    
+        
         // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/length
         if (name.length === 6) {
             result = "OK"
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "KO").to.be.true;
     })
 
     it("comparando cadenas (strings)", () => {
@@ -120,15 +123,14 @@ describe("condicionales en javascript", () => {
         let a = 'a';
         let b = 'b';
         let result;
-
+        
         if (a < b) {
             result = 'pikachu';
         } else {
             result = 'charmander';
         }
-
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "pikachu").to.be.true;
     })
 
     it("Interpolación de cadenas (strings) (1)", () => {
@@ -145,7 +147,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "Pizza con Pepperoni").to.be.true;
     })
 
     it("Interpolación de cadenas (strings) (2)", () => {
@@ -162,7 +164,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "Pizza con Piña").to.be.true;
     })
 })
 
@@ -170,14 +172,14 @@ describe('Algebra booleana', () => {
     it("Usando el operador AND (&&)", () => {
         const a = true;
         //completa la asignación de b
-
+        const b = true;
         const expression = a && b;
         expect(expression).to.equal(true);
     })
     it("Usando el operador OR (||)", () => {
         const a = false;
         //completa la asignación de b
-
+        const b = false;
         const expression = a || b;
         expect(expression).to.equal(false);
     })
@@ -188,8 +190,8 @@ describe('Algebra booleana', () => {
 describe("Funciones (I)", () => {
 
     function evenOrOdd(n) {
-        // cambia el contenido de la función para hacer
-        // pasar los tests
+        // cambia el contenido(n )
+       // pasar los tests 
         return "";
     }
 
@@ -250,7 +252,7 @@ describe("Funciones (II)", () => {
 
 
         // substituye "???" por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "").to.be.true;
     })
 
     it("Cuál es el resultado de invocar la función? (3)", () => {
@@ -298,8 +300,8 @@ describe("Colecciones en JS: Array", () => {
 
         // sustituye "???" en cada caso para acceder al elemento correspondiente de la lista
 
-        expect("???").to.equal("Piña");
-        expect("???").to.equal("Melón");
+        expect("0").to.equal("Piña");
+        expect("0").to.equal("Melón");
     })
     it("Nos permiten modificar cada elemento", () => {
 
@@ -444,7 +446,7 @@ describe("Operaciones iterables", () => {
 
         let knownExoplanets = [ "TOI-1298 b","TOI-132 b","TOI-1333 b","TOI-1338 b","TOI-1431 b","TOI-1444 b","TOI-1478 b","TOI-150.01","TOI-157 b","TOI-1601 b","TOI-163 b","TOI-1634 b","TOI-1685 b","TOI-169 b","TOI-172 b","TOI-1728 b","TOI-1749 b","TOI-1749 c"];
 
-        // utiliza la función filter para quedarnos con los planetas que terminan por la letra c
+        // utiliza la nción filter para quedarnos con los planetas que terminan por la letra c
         // puedes utilizar la función .endsWith para comprobar si un string termina por una letra
         // p.ej. "Hola".endsWith('a') devuelve true
         let result = "???";
