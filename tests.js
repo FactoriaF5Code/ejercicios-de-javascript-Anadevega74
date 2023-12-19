@@ -329,7 +329,7 @@ describe("Ejemplos resueltos: Operaciones iterables", () => {
     it("map nos permite realizar operaciones elemento a elemento", () => {
 
         let list = [1,5,7,9,11,13];
-
+        list =list.map(n=>n-1)
         function multiplicarPor2(num) {
             return num * 2;
         }
@@ -341,7 +341,7 @@ describe("Ejemplos resueltos: Operaciones iterables", () => {
         expect(list).to.have.same.members([2,10,14,18,22,26]);
     })
     it("map nos permite realizar operaciones elemento a elemento (2)", () => {
-
+        
         let list = [1,5,7,9,11,13];
 
         // utiliza la función map para aplicar la función multiplicarPor2 a los números de la lista
@@ -388,7 +388,6 @@ describe("Ejemplos resueltos: Operaciones iterables", () => {
 
         // aplica la función some para verificar si alguno de los números de la lista es menor que 0
         // SOLUCIÓN:
-        let condicion = list.some(menorQue0);        
         
         expect(condicion).to.equal(true);
     })
@@ -396,17 +395,7 @@ describe("Ejemplos resueltos: Operaciones iterables", () => {
     it("every recorre los elementos de la lista y comprueba si ALGUNO cumple la condición", () => {
 
         let list = [1, 2 , -27, 13, 40, 95 , 82, 9];
-
-        function menorQue0(num) {
-            return num < 0;
-        }
-
-        // aplica la función some para verificar si alguno de los números de la lista es menor que 0
-        // SOLUCIÓN:
-        let condicion = list.some(menorQue0);    
-        // SOLUCIÓN ALTERNATIVA:
-        // let condición = list.some( n => n < 0 );    
-        
+        let condicion = list.some(menorQue0)
         expect(condicion).to.equal(true);
     })
 })
@@ -417,7 +406,7 @@ describe("Operaciones iterables", () => {
         let list = [1,5,7,9,11,13];
 
         // utiliza la función map para aplicar los números de la lista
-        list = "???";
+        list = list.map(n=>n-1)
         
 
         expect(list).to.have.same.members([0,4,6,8,10,12]);
@@ -426,7 +415,7 @@ describe("Operaciones iterables", () => {
     it("map nos permite realizar operaciones elemento a elemento (2)", () => {
 
         let list = ["Pikachu", "Charmander", "Magikarp"];
-
+        let result=list.map(element => element+", te elijo a ti!")
         // utiliza la función map para aplicar los números de la lista y guardar la nueva lista en result
                 
         expect(result).to.have.same.members([
@@ -441,7 +430,7 @@ describe("Operaciones iterables", () => {
         let knownExoplanets = [ "TOI-1298 b","TOI-132 b","TOI-1333 b","TOI-1338 b","TOI-1431 b","TOI-1444 b","TOI-1478 b","TOI-150.01","TOI-157 b","TOI-1601 b","TOI-163 b","TOI-1634 b","TOI-1685 b","TOI-169 b","TOI-172 b","TOI-1728 b","TOI-1749 b","TOI-1749 c"];
 
         // utiliza la función includes para comprobar si la lista de planetas contiene el planeta TOI-1634 b
-        let result = "???";
+        let result = knownExoplanets.includes("TOI-1634 b");
         
         expect(result).to.equal(true);        
     })
@@ -453,7 +442,7 @@ describe("Operaciones iterables", () => {
         // utiliza la nción filter para quedarnos con los planetas que terminan por la letra c
         // puedes utilizar la función .endsWith para comprobar si un string termina por una letra
         // p.ej. "Hola".endsWith('a') devuelve true
-        let result = "???";
+        let result = knownExoplanets.filter(planet=>planet.endsWith("c"));
         
 
         // todos los planetas de result terminan con la letra c
