@@ -196,7 +196,7 @@ describe("Funciones (I)", () => {
         else {
             return "odd";
          }
-               }
+        }
 
     function greeting(name) {
         // cambia el contenido de la función para hacer
@@ -246,7 +246,7 @@ describe("Funciones (II)", () => {
 
 
         // substituye "???" por el valor que tiene la variable "result"        
-        expect(result === "28").to.be.true;
+        expect(result === 28).to.be.true;
     })
 
     it("Cuál es el resultado de invocar la función? (2)", () => {
@@ -329,7 +329,7 @@ describe("Ejemplos resueltos: Operaciones iterables", () => {
     it("map nos permite realizar operaciones elemento a elemento", () => {
 
         let list = [1,5,7,9,11,13];
-        list =list.map(n=>n-1)
+       
         function multiplicarPor2(num) {
             return num * 2;
         }
@@ -395,7 +395,12 @@ describe("Ejemplos resueltos: Operaciones iterables", () => {
     it("every recorre los elementos de la lista y comprueba si ALGUNO cumple la condición", () => {
 
         let list = [1, 2 , -27, 13, 40, 95 , 82, 9];
+        function menorQue0(num) {
+            return num <0;
+        }
+        
         let condicion = list.some(menorQue0)
+        let condicion =list.some( n=> n < 0); 
         expect(condicion).to.equal(true);
     })
 })
